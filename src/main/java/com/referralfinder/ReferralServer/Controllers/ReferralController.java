@@ -39,4 +39,6 @@ public class ReferralController {
 	public String addFoo( @RequestParam Integer id) {
 		return new Gson().toJson(new Referral(id,"http://goo.gl/XXX555"+id,"XXX555"+id));
 	}
+
+	
 }
