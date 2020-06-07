@@ -1,24 +1,36 @@
 package com.referralfinder.ReferralServer.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class ReferralModel {
 
 	@Id
-	@GeneratedValue
+	@Column
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column
 	private String url;
+	@Column
 	private String code;
+
+	public ReferralModel() {
+	}
+
+	public ReferralModel(String url, String code) {
+		this.url = url;
+		this.code = code;
+	}
+
 
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getUrl() {
