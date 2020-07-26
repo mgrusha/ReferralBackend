@@ -3,13 +3,13 @@ package com.referralfinder.ReferralServer.models;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "referrals")
 public class Referral {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column
+    @Column(name = "view_count")
     private Long viewCount;
     @Column
     private String url;
