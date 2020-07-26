@@ -1,7 +1,5 @@
 package com.referralfinder.ReferralServer.responses;
 
-import com.referralfinder.ReferralServer.Entities.Referral;
-
 public class AddReferralResponse extends BaseResponse {
 
 	private Long referralId;

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.referralfinder.ReferralServer.Entities.Referral;
 import com.referralfinder.ReferralServer.Requests.ReferralRequest;
 import com.referralfinder.ReferralServer.models.ReferralModel;
 import com.referralfinder.ReferralServer.repository.ReferralRepository;
