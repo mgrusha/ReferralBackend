@@ -9,14 +9,21 @@ public class Referral {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "view_count")
     private Long viewCount;
+
     @Column
     private String url;
+
     @Column
     private String code;
+
     @Column
     private String description;
+
+    @ManyToOne
+    private Service service;
 
     public Long getId() {
         return id;
