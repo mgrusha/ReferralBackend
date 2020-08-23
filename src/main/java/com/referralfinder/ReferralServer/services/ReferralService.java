@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.referralfinder.ReferralServer.Requests.ReferralRequest;
-import com.referralfinder.ReferralServer.models.ReferralModel;
+import com.referralfinder.ReferralServer.models.Referral;
 import com.referralfinder.ReferralServer.repository.ReferralRepository;
 
 @Service
@@ -15,17 +15,19 @@ public class ReferralService {
 	@Autowired
 	private ReferralRepository referralRepository;
 
-	public List<ReferralModel> list() {
+	public List<Referral> list() {
 		return referralRepository.findAll();
 	}
 
-	public ReferralModel add(ReferralRequest referral){
-		ReferralModel referralModel = new ReferralModel(referral.getLink(),referral.getCode());
+	public Referral add(ReferralRequest referral){
+		Referral Referral = new Referral()
+				.withCode(referral.getCode())
+				.withUrl(referral.getLink());
 
-		return referralRepository.save(referralModel);
+		return referralRepository.save(Referral);
 	}
 
-	public List<ReferralModel> getById(List<Long> id){
+	public List<Referral> getById(List<Long> id){
 		return referralRepository.findAllById(id);
 	}
 }

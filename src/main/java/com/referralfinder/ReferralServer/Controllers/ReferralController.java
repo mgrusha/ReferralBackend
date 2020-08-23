@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 import com.referralfinder.ReferralServer.Requests.ReferralRequest;
-import com.referralfinder.ReferralServer.models.ReferralModel;
+import com.referralfinder.ReferralServer.models.Referral;
 import com.referralfinder.ReferralServer.responses.AddReferralResponse;
 import com.referralfinder.ReferralServer.services.ReferralService;
 
@@ -33,7 +33,7 @@ public class ReferralController {
 	private ReferralService referralService;
 
 	@GetMapping("/all")
-	public List<ReferralModel> getAll() {
+	public List<Referral> getAll() {
 		//		referrals.add(new Referral(1,"http://goo.gl/XXX55511","XXX55511"));
 		//		referrals.add(new Referral(2,"http://uber.com/SSSSSS2323","SSSSSS2323"));
 		//		referrals.add(new Referral(3,"http://booking.com/12343","YYBB3344"));
@@ -43,7 +43,7 @@ public class ReferralController {
 
 	@GetMapping()
 	@ResponseBody
-	public List<ReferralModel> addFoo(@RequestParam Long id) {
+	public List<Referral> addFoo(@RequestParam Long id) {
 		return referralService.getById(Arrays.asList(id));
 	}
 

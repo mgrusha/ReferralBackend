@@ -60,4 +60,20 @@ public class Referral {
     public void setViewCount(Long viewCount) {
         this.viewCount = viewCount;
     }
+
+
+    public Referral withUrl(String url) {
+        this.setUrl(url);
+        return this;
+    }
+
+    public Referral withCode(String code) {
+        this.setCode(code);
+        return this;
+    }
+
+    public Referral withDescription(String description) {
+        this.setDescription(description);
+        return this;
+    }
 }
