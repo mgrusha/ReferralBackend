@@ -1,8 +1,9 @@
 package com.referralfinder.ReferralServer.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.referralfinder.ReferralServer.models.Referral;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-public interface ReferralRepository extends JpaRepository<Referral, Long> {
+@RepositoryRestResource(collectionResourceRel = "referrals", path = "referrals")
+public interface ReferralRepository extends PagingAndSortingRepository<Referral, Long> {
 }
